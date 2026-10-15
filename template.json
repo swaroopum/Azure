@@ -31,7 +31,7 @@
       "name": "[parameters('appServicePlanName')]",
       "location": "[parameters('location')]",
       "sku": {
-        "name": "F1",
+        "name": "B1",
         "capacity": 1
       },
       "properties": {}
