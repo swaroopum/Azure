@@ -32,6 +32,7 @@
       "location": "[parameters('location')]",
       "sku": {
         "name": "B1",
+        "tier": "Basic",
         "capacity": 1
       },
       "properties": {}
