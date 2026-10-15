@@ -32,10 +32,13 @@
       "location": "[parameters('location')]",
       "sku": {
         "name": "B1",
-        "tier": "Basic",
+        "tier": "Standard",
         "capacity": 1
       },
-      "properties": {}
+      "kind": "linux",
+      "properties": {
+        "reserved": true
+      }
     },
     {
       "type": "Microsoft.Web/sites",
@@ -46,7 +49,10 @@
         "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
       ],
       "properties": {
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlanName'))]",
+        "siteConfig": {
+          "linuxFxVersion": "PYTHON|3.11"
+        }
       }
     }
   ]
